@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Workout Planner System Login Form</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* General styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 28px;
+    }
+
+    h3 {
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    input[type="text"], input[type="password"] {
+      background-color: #222;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2575fc;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1a64d8;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social div {
+      width: 48%;
+      padding: 12px;
+      text-align: center;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .go {
+      background-color: #db4437;
+    }
+
+    .go:hover {
+      background-color: #c1351d;
+    }
+
+    .fb {
+      background-color: #4267B2;
+    }
+
+    .fb:hover {
+      background-color: #365899;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Planner System</h1> <!-- Main Heading -->
+        <form action="/auth" method="POST">
+            <h3>Login Here</h3>
+
+            <label for="username">Username</label>
+            <input type="text" name="uname" placeholder="Email or Phone" id="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="pwd" placeholder="Password" id="password" required>
+
+            <button type="submit">Log In</button>
+
+            <div class="social">
+                <div class="go"><i class="fab fa-google"></i> Google</div>
+                <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
