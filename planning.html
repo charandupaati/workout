@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Chart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #4CAF50;
+            margin-top: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transform: perspective(1000px);
+            transition: transform 0.3s;
+        }
+        table:hover {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            position: relative;
+            overflow: hidden;
+        }
+        td::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(0);
+            transition: transform 0.3s;
+            z-index: 0;
+        }
+        td:hover::before {
+            transform: scale(1);
+        }
+        td:hover {
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Nutrition Chart</h2>
+
+<h3>2800 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 parathas with paneer filling (400 kcal, 20g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of mixed vegetable curry (200 kcal, 8g protein)<br>1 bowl of dal (150 kcal, 10g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken curry (300 kcal, 30g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of palak paneer (250 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken tikka (300 kcal, 30g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>2600 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 idlis with sambar (250 kcal, 8g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of rajma (250 kcal, 12g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of fish curry (300 kcal, 25g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of tofu stir-fry (200 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of grilled chicken breast (300 kcal, 35g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>2400 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 parathas with paneer filling (400 kcal, 20g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of mixed vegetable curry (200 kcal, 8g protein)<br>1 bowl of dal (150 kcal, 10g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken curry (300 kcal, 30g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of palak paneer (250 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken tikka (300 kcal, 30g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>2200 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 idlis with sambar (250 kcal, 8g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of rajma (250 kcal, 12g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of fish curry (300 kcal, 25g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of tofu stir-fry (200 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of grilled chicken breast (300 kcal, 35g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>2000 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 parathas with paneer filling (400 kcal, 20g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of mixed vegetable curry (200 kcal, 8g protein)<br>1 bowl of dal (150 kcal, 10g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken curry (300 kcal, 30g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of palak paneer (250 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken tikka (300 kcal, 30g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>1800 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 idlis with sambar (250 kcal, 8g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 banana (100 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of rajma (250 kcal, 12g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of fish curry (300 kcal, 25g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of tofu stir-fry (200 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of grilled chicken breast (300 kcal, 35g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+<h3>1700 Calories</h3>
+<table>
+    <tr>
+        <th>Meal</th>
+        <th>Vegetarian</th>
+        <th>Non-Vegetarian</th>
+    </tr>
+    <tr>
+        <td>Breakfast</td>
+        <td>2 parathas with paneer filling (400 kcal, 20g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)<br>1 glass of milk (150 kcal, 8g protein)</td>
+        <td>2 boiled eggs (150 kcal, 12g protein)<br>2 slices of whole-grain toast (160 kcal, 6g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 apple (80 kcal)</td>
+    </tr>
+    <tr>
+        <td>Mid-Morning Snack</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+        <td>1 glass of fresh orange juice (110 kcal)<br>1 handful of almonds (160 kcal, 6g protein)</td>
+    </tr>
+    <tr>
+        <td>Lunch</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of mixed vegetable curry (200 kcal, 8g protein)<br>1 bowl of dal (150 kcal, 10g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken curry (300 kcal, 30g protein)<br>1 bowl of brown rice (220 kcal, 5g protein)</td>
+    </tr>
+    <tr>
+        <td>Evening Snack</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+        <td>1 bowl of sprout salad (150 kcal, 12g protein)<br>1 cup of green tea (0 kcal)</td>
+    </tr>
+    <tr>
+        <td>Dinner</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of palak paneer (250 kcal, 15g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+        <td>2 chapatis (200 kcal, 6g protein)<br>1 bowl of chicken tikka (300 kcal, 30g protein)<br>1 bowl of curd (100 kcal, 8g protein)<br>1 bowl of quinoa (200 kcal, 8g protein)</td>
+    </tr>
+    <tr>
+        <td>Post-Dinner</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+        <td>1 glass of warm milk with a pinch of turmeric (150 kcal, 8g protein)</td>
+    </tr>
+</table>
+
+</body>
+</html>

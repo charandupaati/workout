@@ -32,6 +32,11 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/signin.html");
 });
 
+app.get("/login", (req, res) => {
+  res.redirect("/login.html");
+});
+
+
 app.get("/login.html", (req, res) => {
   res.sendFile(__dirname + "/login.html");
 });
@@ -53,6 +58,22 @@ app.get("/steptracker.html", (req, res) => {
   res.sendFile(__dirname + "/steptracker.html");  // Serve the homepage HTML
 });
 
+app.get("/breakfast.html", (req, res) => {
+  res.sendFile(__dirname + "/breakfast.html");  // Serve the homepage HTML
+});
+
+app.get("/lunch.html", (req, res) => {
+  res.sendFile(__dirname + "/lunch.html");  // Serve the homepage HTML
+});
+
+app.get("/snacks.html", (req, res) => {
+  res.sendFile(__dirname + "/snacks.html");  // Serve the homepage HTML
+});
+
+app.get("/dinner.html", (req, res) => {
+  res.sendFile(__dirname + "/dinner.html");  // Serve the homepage HTML
+});
+
 app.post("/reg", (req, res) => {
   var uname = req.body.uname;
   var email = req.body.email;
@@ -68,9 +89,8 @@ app.post("/reg", (req, res) => {
       return res.status(500).send("Error hashing password.");
     }
 
-    pool.query(
-      "INSERT INTO studentinfo (uname, email, pwd) VALUES (?, ?, ?)",
-      [uname, email, hashedPwd],
+    pool.query("INSERT INTO studentinfo (uname, email, pwd) VALUES (?, ?, ?)", 
+           [uname, email.trim().toLowerCase(), hashedPwd],
       function (err, result, fields) {
         if (err) {
           console.error("Error executing query:", this.sql); 
@@ -83,10 +103,12 @@ app.post("/reg", (req, res) => {
   });
 });
 
-// Authentication route
+
+
 app.post("/auth", (req, res) => {
-  console.log("Request received at /auth with data:", req.body); 
-  var email = req.body.uname; 
+  console.log("Request received at /auth with data:", req.body);
+
+  var email = req.body.email.trim().toLowerCase(); 
   var pwd = req.body.pwd;
 
   pool.query(
@@ -99,6 +121,7 @@ app.post("/auth", (req, res) => {
       }
 
       if (result.length > 0) {
+        console.log("User found:", result[0]); // Log retrieved user details
         bcrypt.compare(pwd, result[0].pwd, (err, isMatch) => {
           if (err) {
             console.error("Error comparing passwords:", err);
@@ -106,15 +129,15 @@ app.post("/auth", (req, res) => {
           }
 
           if (isMatch) {
-            console.log("Login successful for user:", email); 
-             res.sendFile(__dirname + "/homepage.html"); 
+            console.log("Login successful for user:", email);
+            res.sendFile(__dirname + "/homepage.html");
           } else {
-            console.log("Invalid password for user:", email); 
+            console.log("Invalid password for user:", email);
             res.status(401).send("Invalid username or password.");
           }
         });
       } else {
-        console.log("User not found:", email); 
+        console.log("User not found in database:", email);
         res.status(404).send("User not found.");
       }
     }

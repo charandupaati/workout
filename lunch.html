@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Nutrition</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; text-align: center; padding: 40px; }
+        h2 { font-size: 36px; margin-bottom: 20px; font-weight: 600; }
+        .toggle-buttons { margin-bottom: 20px; }
+        .toggle-button { padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background-color: #000; color: white; margin: 5px; transition: background-color 0.3s; }
+        .toggle-button:hover { background-color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; display: block; justify-content: space-between; padding: 40px; background-color: white; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); }
+        .meal-info { margin-bottom: 30px; }
+        .meal-info p { font-size: 20px; font-weight: 600; color: #555; }
+        .meal-item {display: flex;align-items: center; margin-bottom: 15px; justify-content: flex-start; /* Align the items from the same line */ }
+        .meal-item img { margin-right: 15px; border-radius: 8px; }
+        .button { padding: 12px 20px; font-size: 14px; background-color: #000; color: white; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease; }
+        .button:hover { background-color: #333; }
+        .left-column, .right-column { width: 48%; display: none; }
+        @media (max-width: 768px) { .container { flex-direction: column; padding: 20px; } .left-column, .right-column { width: 100%; } }
+    </style>
+</head>
+<body>
+
+<h2>Lunch Nutrition</h2>
+
+<div class="toggle-buttons">
+    <button class="toggle-button" onclick="showVeg()">Veg</button>
+    <button class="toggle-button" onclick="showNonVeg()">Non-Veg</button>
+</div>
+
+<div class="container">
+    <div class="left-column" id="veg-meals">
+        <div class="meal-info">
+           <p><strong>1700 Calories:</strong></p>
+        <div class="meal-item">
+            <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">1 chapati (100 kcal, 3g protein)</a>
+        </div>
+        <div class="meal-item">
+            <img src="/images/dal.jpg" alt="dall" width="100" height="100">
+            <a href="#" class="button">1 bowl of dal (150 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/rice.jpg" alt="rice" width="100" height="100">
+            <a href="#" class="button">1 small portion of rice (100 kcal)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/salad.jpg" alt="salad" width="100" height="100">
+            <a href="#" class="button">1 bowl of salad (100 kcal)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>1800 Calories:vegterian</strong></p>
+        <div class="meal-item">
+                  <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+               <img src="/images/vcurry.jpg" alt="vegetable curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of mixed vegetable curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>1900 Calories:vegterian</strong></p>
+        <div class="meal-item">
+                 <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/rajma.jpg" alt="rajma" width="100" height="100">
+            <a href="#" class="button">1 bowl of rajma (250 kcal, 12g protein)</a>
+        </div>
+        <div class="meal-item">
+                 <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>2000 Calories:vegterian</strong></p>
+        <div class="meal-item">
+      <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/dal.jpg" alt="dal" width="100" height="100">
+            <a href="#" class="button">1 bowl of dal (150 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/salad.jpg" alt="salad" width="100" height="100">
+            <a href="#" class="button">1 bowl of salad (100 kcal)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>2200 Calories:vegterian</strong></p>
+        <div class="meal-item">
+             <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+            <img src="/images/vcurry.jpg" alt="vegetable curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of vegetable curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/salad.jpg" alt="salad" width="100" height="100">
+            <a href="#" class="button">1 bowl of salad (100 kcal)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>2400 Calories:vegterian</strong></p>
+        <div class="meal-item">
+                <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/rajma.jpg" alt="rajma" width="100" height="100">
+            <a href="#" class="button">1 bowl of rajma (250 kcal, 12g protein)</a>
+        </div>
+        <div class="meal-item">
+              <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        <div class="meal-item">
+              <img src="/images/salad.jpg" alt="salad" width="100" height="100">
+            <a href="#" class="button">1 bowl of salad (100 kcal)</a>
+        </div>
+    </div>
+
+    <div class="meal-info">
+        <p><strong>2600 Calories:vegterian</strong></p>
+        <div class="meal-item">
+               <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/vcurry.jpg" alt="vegetable curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of vegetable curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+      <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        <div class="meal-item">
+                  <img src="/images/salad.jpg" alt="salad" width="100" height="100">
+            <a href="#" class="button">1 bowl of salad (100 kcal)</a>
+        </div>
+    </div>
+   </div>
+
+    <div class="right-column" id="nonveg-meals">
+        <div class="meal-info">
+            <p><strong>1700 Calories:</strong></p>
+        <div class="meal-item">
+            <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (100 kcal, 3g protein)</a>
+        </div>
+        <div class="meal-item">
+            <img src="/images/brice.jpg" alt=" brown rice" width="100" height="100">
+            <a href="#" class="button">1 ball of brown rice (100 kcal)</a>
+        </div>
+        <div class="meal-item">
+            <img src="/images/ccurry.jpg" alt="chicken curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of chicken curry (100 kcal)</a>
+        </div>
+            <div class="meal-info">
+        <p><strong>1800 Calories:vegterian</strong></p>
+        <div class="meal-item">
+                  <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+               <img src="/images/fcurry.jpg" alt="fish curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of fish curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+    </div>
+
+        <div class="meal-info">
+              <p><strong>2000 Calories:Non vegterian</strong></p>
+            <div class="meal-item">
+                <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+                <a href="#" class="button">2 chapati (150 kcal, 12g protein)</a>
+            </div>
+            <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+                <a href="#" class="button">1 bowl of brown rice(160 kcal, 6g protein)</a>
+            </div>
+               <div class="meal-item">
+                <img src="/images/ccurry.jpg" alt="chicken curry" width="100" height="100">
+                <a href="#" class="button">1 bowl of chicken curry(100 kcal, 8g protein)</a>
+            </div>
+               
+        </div>
+
+        <div class="meal-info">
+             <p><strong>2200 Calories:Non vegterian</strong></p>
+            <div class="meal-item">
+                <img src="/images/chapathi.jpg" alt="chapatis" width="100" height="100">
+                <a href="#" class="button">2 chapatis (150 kcal, 12g protein)</a>
+            </div>
+             <div class="meal-item">
+               <img src="/images/fcurry.jpg" alt="fish curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of fish curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        </div>
+
+        <div class="meal-info">
+              <p><strong>2400 Calories:Non vegterian</strong></p>
+             <div class="meal-item">
+                <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+                <a href="#" class="button">2 chapati (150 kcal, 12g protein)</a>
+            </div>
+            <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+                <a href="#" class="button">1 bowl of brown rice(160 kcal, 6g protein)</a>
+            </div>
+               <div class="meal-item">
+                <img src="/images/ccurry.jpg" alt="chicken curry" width="100" height="100">
+                <a href="#" class="button">1 bowl of chicken curry(100 kcal, 8g protein)</a>
+            </div>
+        </div>
+
+        <div class="meal-info">
+              <p><strong>2600 Calories:Non vegterian</strong></p>
+            <div class="meal-item">
+                  <img src="/images/chapathi.jpg" alt="chapati" width="100" height="100">
+            <a href="#" class="button">2 chapatis (200 kcal, 6g protein)</a>
+        </div>
+        <div class="meal-item">
+               <img src="/images/fcurry.jpg" alt="fish curry" width="100" height="100">
+            <a href="#" class="button">1 bowl of fish curry (200 kcal, 8g protein)</a>
+        </div>
+        <div class="meal-item">
+                <img src="/images/brice.jpg" alt="brown rice" width="100" height="100">
+            <a href="#" class="button">1 bowl of brown rice (220 kcal, 5g protein)</a>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function showVeg() {
+        document.getElementById("veg-meals").style.display = "block";
+        document.getElementById("nonveg-meals").style.display = "none";
+    }
+
+    function showNonVeg() {
+        document.getElementById("veg-meals").style.display = "none";
+        document.getElementById("nonveg-meals").style.display = "block";
+    }
+
+    // Show only vegetarian meals by default
+    showVeg();
+</script>
+
+</body>
+</html>

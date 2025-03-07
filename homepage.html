@@ -5,16 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WORKOUT PLANNER</title>
     <link rel="stylesheet" href="/css/styles.css">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero {
+            background: linear-gradient(to right, #000000, #333333);
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn {
+            background: #000000;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .btn:hover {
+            background: #444444;
+            transform: scale(1.05);
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+        .feature h3 {
+            color: #000000;
+        }
+        .goals-buttons li {
+            display: inline-block;
+            margin: 10px;
+        }
+        .goals-buttons button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .goals-buttons button:hover {
+            background: #218838;
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>WELCOME TO WORKOUT PLANEER SYSTEM</h1>
+        <h1>WELCOME TO WORKOUT PLANNER SYSTEM</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="steptracker.html">Steps Tracking</a></li>
                 <li><a href="workout.html">Workout Plan</a></li>
+              <li><a href="steptracker.html">Steps Tracking</a></li>
                 <li><a href="nutrition.html">Go to Nutrition Tracker</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -23,13 +118,37 @@
     
     <section id="home" class="hero">
         <h2>Track Your Fitness, Stay Healthy</h2>
-        <p>Monitor your steps and follow daily workouts to stay fit.</p>
-        <a href="#steps" class="btn">Get Started</a>
+        <p>Monitor your progress and follow structured workouts to stay fit.</p>
+        <a href="#workout" class="btn">Get Started</a>
     </section>
     
-    <section id="steps" class="steps-tracking">
-        <h2>Steps Tracking</h2>
-        <p>Keep a daily record of your steps and set your fitness goals.</p>
+    <section id="about">
+        <h2>What is Workout Planner?</h2>
+        <p>The workout planner helps you create a custom fitness plan step-by-step.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Learn How to Do the Exercises</h3>
+                <p>Not sure about an exercise? Our library guides you on form & technique.</p>
+            </div>
+            <div class="feature">
+                <h3>Create a Free Personalized Workout</h3>
+                <p>Design a workout plan that suits your goals & preferences.</p>
+            </div>
+            <div class="feature">
+                <h3>Fitness Calculators</h3>
+                <p>Track calories, calculate rep maxes, and monitor body composition.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="create-plan">
+        <h2>How to Create a Personalized Workout Plan</h2>
+        <p>Consider your fitness goals, track progress, and plan exercises effectively.</p>
+        <ul class="goals-buttons">
+            <li><button>Do you want to build muscle?</button></li>
+            <li><button>Are you looking to lose weight?</button></li>
+            <li><button>Do you want to become stronger?</button></li>
+        </ul>
     </section>
     
     <footer id="contact">
